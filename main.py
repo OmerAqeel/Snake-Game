@@ -10,6 +10,14 @@ game_screen.tracer(0)
 
 snake = Snake()
 
+#Moves
+
+
+game_screen.listen()
+game_screen.onkey(key="Up", fun=snake.move_up)
+game_screen.onkey(key="Down", fun=snake.move_down)
+game_screen.onkey(key="Right", fun=snake.move_right)
+game_screen.onkey(key="Left", fun= snake.move_left)
 
 in_the_Game = True
 

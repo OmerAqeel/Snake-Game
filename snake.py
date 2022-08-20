@@ -2,6 +2,7 @@ from turtle import Turtle
 
 POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 DISTANCE = 20
+tim = Turtle()
 class Snake:
     def __init__(self):
         self.segments = []
@@ -11,7 +12,7 @@ class Snake:
         for pos in POSITIONS:
             seg = Turtle(shape="square")
             seg.penup()
-            seg.color("white")
+            seg.color("green")
             seg.setposition(pos)
             self.segments.append(seg)
 
@@ -22,4 +23,15 @@ class Snake:
             new_y = self.segments[seg - 1].ycor()
             self.segments[seg].goto(x=new_x, y=new_y)
         self.segments[0].forward(DISTANCE)
+
+    def move_up(self):
+            self.segments[0].setheading(90)
+    def move_down(self):
+        self.segments[0].setheading(270)
+    def move_left(self):
+        self.segments[0].setheading(180)
+    def move_right(self):
+        self.segments[0].setheading(0)
+
+
 

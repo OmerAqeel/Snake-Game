@@ -1,14 +1,14 @@
 from turtle import Turtle
 
-positions = [(0, 0), (-20, 0), (-40, 0)]
-
+POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
+DISTANCE = 20
 class Snake:
     def __init__(self):
         self.segments = []
         # Creating the segments of snakes
         self.create()
     def create(self):
-        for pos in positions:
+        for pos in POSITIONS:
             seg = Turtle(shape="square")
             seg.penup()
             seg.color("white")
@@ -21,5 +21,5 @@ class Snake:
             new_x = self.segments[seg - 1].xcor()
             new_y = self.segments[seg - 1].ycor()
             self.segments[seg].goto(x=new_x, y=new_y)
-        self.segments[0].forward(20)
+        self.segments[0].forward(DISTANCE)
 

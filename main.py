@@ -32,7 +32,7 @@ def game_over():
     game_Over.color("white")
     game_Over.penup()
     game_Over.goto(x=-49, y=0)
-    game_Over.write("Game Over.", font=("Courier", 21, "normal"))
+    game_Over.write("GAME OVER.", font=("Courier", 21, "normal"))
     game_Over.hideturtle()
 
 
@@ -75,4 +75,3 @@ while in_the_Game:
 
 
 game_screen.exitonclick()
-

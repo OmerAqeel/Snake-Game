@@ -2,7 +2,7 @@ from turtle import Turtle
 
 POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 DISTANCE = 20
-tim = Turtle()
+
 class Snake:
     def __init__(self):
         self.segments = []

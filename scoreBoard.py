@@ -1,16 +1,16 @@
-ffrom turtle import Turtle
+from turtle import Turtle
 
 class ScoreBoard(Turtle):
     def __init__(self):
         super().__init__()
         self.score = 0
-        self.goto(x = -30, y = 280)
+        self.goto(x=-49, y=270)
         self.color("white")
         self.hideturtle()
         self.update_score()
 
     def update_score(self):
-        self.write(f"Score: {self.score}", font=("Algerian", 17, "normal"))
+        self.write(f"Score: {self.score}", font=("Courier", 21, "normal"))
 
     def giveScore(self):
         self.score += 1     # score will increment by 1

@@ -44,6 +44,7 @@ while in_the_Game:
 #Detecting the collision between the food and snake
     if snake.head.distance(food) < 15:
         food.move()
+        snake.extend_snake()
         score.giveScore()
 #Detecting the collision between the wall and the snake
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:

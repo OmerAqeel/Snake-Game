@@ -15,7 +15,7 @@ game_screen.tracer(0)
 snake = Snake()
 food = Food()
 score = ScoreBoard()
-game_Over = Turtle()
+
 
 
 #Moves
@@ -29,6 +29,7 @@ in_the_Game = True
 
 
 def game_over():
+    game_Over = Turtle()
     game_Over.color("white")
     game_Over.penup()
     game_Over.goto(x=-49, y=0)
@@ -47,11 +48,31 @@ while in_the_Game:
         snake.extend_snake()
         score.giveScore()
 #Detecting the collision between the wall and the snake
-    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
+    if snake.head.xcor() > 290 or snake.head.xcor() < -290 or snake.head.ycor() > 280 or snake.head.ycor() < -290:
         game_over()
         in_the_Game = False
 
+#Detecting the collision between the snake and its tail
+    for seg in snake.segments:
+        if seg ==  snake.head:
+            pass
+        elif snake.head.distance(seg)<10:
+            game_over()
+            in_the_Game = False
+
     snake.move()
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

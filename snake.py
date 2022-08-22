@@ -33,15 +33,15 @@ class Snake:
 
     def move_up(self):
         if self.head.heading() != 270:       #The snake should not move up if its going down (that is how the snake game works)
-            self.segments[0].setheading(90)
+            self.head.setheading(90)
     def move_down(self):
         if self.head.heading() != 90:        #The snake should not move down if its going up (that is how the snake game works)
-            self.segments[0].setheading(270)
+            self.head.setheading(270)
     def move_left(self):
         if self.head.heading() != 0:         #The snake should not move left if its going right (that is how the snake game works)
-            self.segments[0].setheading(180)
+            self.head.setheading(180)
     def move_right(self):
         if self.head.heading() != 180:       #The snake should not move right if its going left (that is how the snake game works)
-            self.segments[0].setheading(0)
+            self.head.setheading(0)
 
 

@@ -13,12 +13,20 @@ class Snake:
         for pos in POSITIONS:
             self.add_segment(pos)
 
+
     def add_segment(self, pos):
         seg = Turtle(shape="square")
         seg.penup()
-        seg.color("green")
+        seg.color("blue")
         seg.setposition(pos)
         self.segments.append(seg)
+
+    def reset(self):
+        for seg in self.segments:
+            seg.goto(1000, 1000)        # Sending the previous snake far away from the game screen (if this was not done then when the player would collide with the wall or with its tail then it would have remained on the screen)
+        self.segments.clear()
+        self.create()
+        self.head = self.segments[0]
 
     def extend_snake(self):
         self.add_segment(self.segments[-1].position()) #adding the snake segment to the last position (-1)
@@ -33,15 +41,14 @@ class Snake:
 
     def move_up(self):
         if self.head.heading() != 270:       #The snake should not move up if its going down (that is how the snake game works)
-            self.head.setheading(90)
+            self.segments[0].setheading(90)
     def move_down(self):
         if self.head.heading() != 90:        #The snake should not move down if its going up (that is how the snake game works)
-            self.head.setheading(270)
+            self.segments[0].setheading(270)
     def move_left(self):
         if self.head.heading() != 0:         #The snake should not move left if its going right (that is how the snake game works)
-            self.head.setheading(180)
+            self.segments[0].setheading(180)
     def move_right(self):
         if self.head.heading() != 180:       #The snake should not move right if its going left (that is how the snake game works)
-            self.head.setheading(0)
-
+            self.segments[0].setheading(0)
 

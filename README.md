@@ -4,6 +4,7 @@ Snake game created using Python turtle module, the program follows the OOP to cr
 ## Modules used in the program
 1) turtle 
 2) time
+3) random
 
 ### turtle
 The turtle module provides turtle graphics primitives, in both object-oriented and procedure-oriented ways. Because it uses tkinter for the underlying graphics, it needs a version of Python installed with Tk support.
